@@ -5,5 +5,5 @@
   "port": 3006,
   "domain": "ntbs.tcioe.edu.np",
   "build": "npm install && npm run build",
-  "start": "serve -s build -l 3006"
+  "start": "PORT=3006 npm start"
 }
