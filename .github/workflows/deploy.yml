@@ -1,4 +1,4 @@
-name: Deploy NTBS Website
+name: Deploy ntbs Website
 on:
   push:
     branches: [main]
