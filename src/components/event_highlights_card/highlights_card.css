@@ -1,0 +1,82 @@
+.highlightsCard-heading{
+    text-align: center;
+    padding: 2.5rem;
+    color: #2a3238;
+}
+
+.highlightsCard-imgBox img{
+    display: block;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+.highlightsCard-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.highlightsCard{
+    display: block;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    transition: 0.5s ease;
+    position: relative;
+}
+.highlightsCard:hover{
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.5);
+    transform: scale(1.01);
+    cursor: pointer;
+    & .highlightsCard-content{
+        height: 45%;
+    }
+    & .highlightsCard-imgBox img{
+        transform: scale(1.1);
+    }
+}
+.highlightsCard-content{
+    position: absolute;
+    background-color: rgba(0 0 0/50%);
+    bottom: 0;
+    color: #fff;
+    width: 100%;
+    height: 20%;
+    padding: .4rem;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.highlightsCard-content h1{
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: capitalize;
+    padding: 1rem;
+}
+
+.highlightsCard-content p{
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.25rem;
+    padding: 0 1rem;
+}
+
+@media (768px < width <= 1024px){
+    .highlightsCard-grid{
+        grid-template-columns: repeat(2,1fr);
+        & > div:nth-child(3){
+            grid-column: 2 span;
+        }
+    }
+}
+
+@media (width <= 768px){
+    .highlightsCard-grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .highlightsCard-content p{
+        padding-inline: .5rem;
+    }
+}

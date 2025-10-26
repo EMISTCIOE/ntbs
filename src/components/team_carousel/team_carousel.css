@@ -1,0 +1,25 @@
+.slick-list {
+  margin: 0 -7px !important;
+}
+.slick-slide > div {
+  padding: 7px !important;
+}
+.team-slide {
+  padding: 0 2rem;
+  width: 100%;
+}
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  color: #645bff;
+  cursor: pointer;
+  z-index: 1;
+}
+.custom-prev-arrow {
+  left: -38px;
+}
+.custom-next-arrow {
+  right: -38px;
+}

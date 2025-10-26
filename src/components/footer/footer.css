@@ -1,0 +1,60 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+    color: #fff;
+    background-image: linear-gradient(rgba(15, 31, 48, 0.65), rgba(15, 31, 48, 0.65)),
+      url(../../../public/images/footer-temple.png);
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 1.5rem;
+}
+
+
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: .75rem;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+.flex-row-base{
+    display: flex;
+    flex-direction: row;
+    align-items: last baseline;
+    gap: .5rem;
+}
+
+.flex-row span{
+    font-size: 1.4rem;
+    transition: .5s ease;
+}
+
+.flex-row span:hover{
+    transform: translateY(-.1rem);
+}
+
+@media screen and (max-width: 768px) {
+    .content{
+        flex-direction: column;
+        gap: .5rem;
+    }
+}

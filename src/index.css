@@ -1,0 +1,187 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /*========== Font and Typography ==========*/
+  --body-font: "Nunito Sans", sans-serif;
+
+  /*========== Colors ==========*/
+  --body-color: #fff;
+  --light-text-color: #fff;
+  --dark-text-color: #000;
+  --main-color: #002f8b;
+  --yellow: #ffff00;
+
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== Margenes Bottom ==========*/
+  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /*========== Swiper Variables ==========*/
+  --swiper-pagination-color: #fff;
+  --swiper-pagination-bullet-inactive-color: #fff;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 768px) {
+  :root {
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*==================== BASE ====================*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* margin: 0 0 4rem 0; */
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--dark-text-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--dark-title-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: 1s ease;
+}
+
+a:hover {
+  color: var(--yellow);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  padding: 4rem 2.5rem;
+}
+
+.section-heading {
+  color: var(--main-color);
+  font-size: var(--h1-font-size);
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 0.5rem;
+}
+
+.line {
+  height: 0.35rem;
+  width: 5rem;
+  background: linear-gradient(to right, #ee0979, #ff6a00, #ee0979);
+  border-radius: 0.25rem;
+}
+
+
+
+/*==================== BUTTONS ====================*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 1rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+}
+
+.button__icon{
+  font-size: 1.25rem;
+  margin-left: var(--mb-0-25);
+  margin-top: var(--mb-0-5);
+  transition: .3s;
+}
+.button--flex{
+  display: inline-flex;
+  align-items: center;
+}
+.button--small{
+  padding: .75rem 1rem;
+}
+.button--link{
+  padding: 0;
+  background-color: transparent;
+  color: var(--first-color);
+  cursor: pointer;
+}
+.button--link:hover{
+  background-color: transparent;
+  color: var(--first-color-alt);
+}
+
+.services__button{
+  font-size: var(--small-font-size);
+}
+.services__button:hover .button__icon{
+  transform: translate(.25rem);
+}
+
+@media (max-width: 768px){
+  .container {
+    padding: 4rem 1.5rem;
+  }
+}

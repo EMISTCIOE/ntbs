@@ -1,0 +1,60 @@
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  position: absolute;
+  top: 45%;
+  text-align: center;
+  margin: 5% 10%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.main-text h1 {
+  font-size: var(--big-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 1rem;
+  transition: 0.5s;
+  color: var(--light-text-color);
+}
+
+.main-text h2 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-light);
+  margin-bottom: 5rem;
+  color: var(--yellow);
+}
+
+.main-text p {
+  font-size: var(--h3-font-size);
+  color: var(--light-text-color);
+  /* margin-bottom: 4rem; */
+}
+
+.btn {
+  padding: 0.4rem 1.25rem;
+  background: transparent;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: var(--font-medium);
+  font-family: "Nunito Sans", sans-serif;
+  border-radius: 0.3rem;
+  border: 0.18rem solid white;
+  transition: 0.3s ease;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(0.3rem);
+  }
+  &:active{
+    transform: scale(0.9);
+  }
+}

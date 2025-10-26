@@ -1,0 +1,86 @@
+.teamcard {
+  position: relative;
+  height: 350px;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,0.25);
+}
+.teamcard-circle {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 375px;
+  height: 375px;
+  transform: translateX(-50%);
+  clip-path: circle();
+}
+.teamcard-circle::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 0 30px rgba(76, 0, 255, 0.5);
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+.teamcard-imgBox {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: darkorange;
+  width: 325px;
+  height: 325px;
+
+}
+.teamcard-imgBox img {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+.teamcard:hover {
+  cursor: pointer;
+  .teamcard-imgBox img{
+    transform: scale(1.05);
+  }
+  .teamcard-circle::before{
+    transform: translateY(-5px);
+  }
+}
+.teamcard-content{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem .5rem;
+  transition: all 0.5s;
+}
+.teamcard h3{
+  font-weight: var(--font-bold);
+  font-size: var(--normal-font-size);
+  color: #2769DC;
+}
+.teamcard h4{
+  font-weight: var(--font-semibold);
+  font-size: var(--small-font-size);
+  color: #2a3238;
+}
+.teamcard h5{
+  font-weight: var(--font-regular);
+  font-size: var(--smaller-font-size);
+  color: #707070;
+}

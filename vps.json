@@ -1,0 +1,9 @@
+{
+  "name": "ntbs",
+  "type": "node",
+  "path": "/srv/apps/ntbs",
+  "port": 3006,
+  "domain": "ntbs.tcioe.edu.np",
+  "build": "npm install && npm run build",
+  "start": "PORT=3006 npm run start"
+}
