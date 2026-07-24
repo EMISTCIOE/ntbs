@@ -1,0 +1,61 @@
+name: VPS Logs
+
+on:
+  workflow_dispatch:
+    inputs:
+      service:
+        description: "Systemd service name (leave empty to use repo name)"
+        required: false
+        default: ""
+      lines:
+        description: "Number of journal lines to show"
+        required: false
+        default: "200"
+      seconds:
+        description: "Show logs from last N seconds (max 300)"
+        required: false
+        default: "120"
+
+jobs:
+  show-logs:
+    name: Show VPS logs
+    runs-on: self-hosted
+
+    steps:
+      - name: Resolve service and print logs
+        shell: bash
+        run: |
+          set -euo pipefail
+          SERVICE_INPUT='${{ github.event.inputs.service }}'
+          LINES='${{ github.event.inputs.lines }}'
+          SECONDS='${{ github.event.inputs.seconds }}'
+
+          SERVICE="$SERVICE_INPUT"
+          if [ -z "$SERVICE" ]; then
+            SERVICE="${GITHUB_REPOSITORY#*/}"
+          fi
+
+          if ! [[ "$SECONDS" =~ ^[0-9]+$ ]]; then
+            echo "Invalid seconds value: must be a positive integer"
+            exit 1
+          fi
+          if [ "$SECONDS" -lt 1 ] || [ "$SECONDS" -gt 300 ]; then
+            echo "Invalid seconds value: must be between 1 and 300"
+            exit 1
+          fi
+
+          SUDO=""
+          if command -v sudo >/dev/null 2>&1 && sudo -n true >/dev/null 2>&1; then
+            SUDO="sudo -n"
+          fi
+
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Service: $SERVICE"
+          echo "Lines: $LINES"
+          echo "Seconds: $SECONDS"
+
+          echo "=== systemctl status ==="
+          $SUDO systemctl status "$SERVICE" --no-pager || true
+
+          echo "=== journalctl logs ==="
+          $SUDO journalctl -u "$SERVICE" --since "-$SECONDS seconds" -n "$LINES" --no-pager --output=short-iso || true
